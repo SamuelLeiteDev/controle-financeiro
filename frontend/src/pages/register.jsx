@@ -77,7 +77,7 @@ function Register() {
               name="name_register"
               required
               placeholder="Seu nome completo"
-              className="h-12 w-full rounded-lg border border-neutral-700 bg-neutral-800/60 px-4 text-base text-white placeholder-neutral-500 shadow-sm backdrop-blur-sm transition duration-200 focus:border-indigo-500 focus:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
+              className="h-12 w-full rounded-lg border border-neutral-700 bg-neutral-800/60 px-4 text-base text-white placeholder-neutral-500 shadow-sm backdrop-blur-sm transition duration-200 focus:border-verde-500 focus:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-verde-500/30"
               {...register("nome")}
             />
           </div>
@@ -95,7 +95,7 @@ function Register() {
               id="email-register"
               name="email_register"
               placeholder="exemplo@email.com"
-              className="h-12 w-full rounded-lg border border-neutral-700 bg-neutral-800/60 px-4 text-base text-white placeholder-neutral-500 shadow-sm backdrop-blur-sm transition duration-200 focus:border-indigo-500 focus:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
+              className="h-12 w-full rounded-lg border border-neutral-700 bg-neutral-800/60 px-4 text-base text-white placeholder-neutral-500 shadow-sm backdrop-blur-sm transition duration-200 focus:border-verde-500 focus:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-verde-500/30"
               {...register("email")}
             />
           </div>
@@ -114,11 +114,12 @@ function Register() {
                 id="password-register"
                 name="password_register"
                 placeholder="Mínimo 8 caracteres"
-                className="h-12 w-full rounded-lg border border-neutral-700 bg-neutral-800/60 pl-4 pr-12 text-base text-white placeholder-neutral-500 shadow-sm backdrop-blur-sm transition duration-200 focus:border-indigo-500 focus:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
+                className="h-12 w-full rounded-lg border border-neutral-700 bg-neutral-800/60 pl-4 pr-12 text-base text-white placeholder-neutral-500 shadow-sm backdrop-blur-sm transition duration-200 focus:border-verde-500 focus:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-verde-500/30"
                 {...register("password")}
               />
               <button
                 type="button"
+                tabIndex="-1"
                 onClick={() => setShowPassword((prev) => !prev)}
                 className="absolute right-3 cursor-pointer p-1.5 text-neutral-400 transition hover:text-neutral-200 focus:outline-none"
                 aria-label={showPassword ? "Ocultar senha" : "Ver senha"}
@@ -146,11 +147,12 @@ function Register() {
                 id="confirm-password-register"
                 name="confirm_password_register"
                 placeholder="Repita sua senha"
-                className="h-12 w-full rounded-lg border border-neutral-700 bg-neutral-800/60 pl-4 pr-12 text-base text-white placeholder-neutral-500 shadow-sm backdrop-blur-sm transition duration-200 focus:border-indigo-500 focus:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
+                className="h-12 w-full rounded-lg border border-neutral-700 bg-neutral-800/60 pl-4 pr-12 text-base text-white placeholder-neutral-500 shadow-sm backdrop-blur-sm transition duration-200 focus:border-verde-500 focus:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-verde-500/30"
                 {...register("confirm_password")}
               />
               <button
                 type="button"
+                tabIndex="-1"
                 onClick={() => setShowConfirmPassword((prev) => !prev)}
                 className="absolute right-3 cursor-pointer p-1.5 text-neutral-400 transition hover:text-neutral-200 focus:outline-none"
                 aria-label={
@@ -173,7 +175,7 @@ function Register() {
           {/* Botão Cadastrar */}
           <button
             type="submit"
-            className="mt-3 h-12 w-full rounded-lg bg-indigo-600 text-base font-semibold text-white shadow-md shadow-indigo-600/20 transition-all duration-200 hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 active:scale-[0.98] cursor-pointer"
+            className="mt-3 h-12 w-full rounded-lg bg-verde-600 text-base font-semibold text-white shadow-md shadow-verde-600/20 transition-all duration-200 hover:bg-verde-500 focus:outline-none focus:ring-2 focus:ring-verde-500/50 active:scale-[0.98] cursor-pointer"
           >
             Criar conta
           </button>
@@ -183,8 +185,9 @@ function Register() {
             Já tem uma conta?{" "}
             <button
               type="button"
+              tabIndex="-1"
               onClick={() => navigate("/login")}
-              className="font-medium text-indigo-400 hover:text-indigo-300 hover:underline cursor-pointer"
+              className="font-medium text-verde-400 hover:text-verde-300 hover:underline cursor-pointer"
             >
               Faça login
             </button>

@@ -1,1 +1,29 @@
 @import "tailwindcss";
+
+@theme {
+  --color-verde-50: #edfaf3;
+  --color-verde-100: #d3f3e1;
+  --color-verde-200: #a8e6c4;
+  --color-verde-300: #74d4a0;
+  --color-verde-400: #3ebd7b;
+  --color-verde-500: #1fa463;
+  --color-verde-600: #148550;
+  --color-verde-700: #0f6b41;
+  --color-verde-800: #0d5535;
+  --color-verde-900: #0a4029;
+
+  --color-receita: #148550;
+  --color-despesa: #d6453d;
+  --color-atencao: #e8a317;
+  --color-meta: #0f8a8a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo: #0c1410;
+    --cartao: #131e18;
+    --borda: #24342b;
+    --texto: #e7f1eb;
+    --texto-suave: #8da295;
+  }
+}

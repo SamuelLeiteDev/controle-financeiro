@@ -74,7 +74,7 @@ function Login() {
               id="email-login"
               name="email_login"
               placeholder="exemplo@email.com"
-              className="h-12 w-full rounded-lg border border-neutral-700 bg-neutral-800/60 px-4 text-base text-white placeholder-neutral-500 shadow-sm backdrop-blur-sm transition duration-200 focus:border-indigo-500 focus:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
+              className="h-12 w-full rounded-lg border border-neutral-700 bg-neutral-800/60 px-4 text-base text-white placeholder-neutral-500 shadow-sm backdrop-blur-sm transition duration-200 focus:border-verde-500 focus:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-verde-500/30"
               {...register("email")}
             />
           </div>
@@ -90,7 +90,8 @@ function Login() {
               </label>
               <a
                 href="#"
-                className="text-xs text-indigo-400 hover:text-indigo-300 hover:underline transition duration-150"
+                tabIndex="-1"
+                className="text-xs text-verde-400 hover:text-verde-300 hover:underline transition duration-150"
               >
                 Esqueceu a senha?
               </a>
@@ -102,12 +103,13 @@ function Login() {
                 id="password-login"
                 name="password_login"
                 placeholder="••••••••"
-                className="h-12 w-full rounded-lg border border-neutral-700 bg-neutral-800/60 pl-4 pr-12 text-base text-white placeholder-neutral-500 shadow-sm backdrop-blur-sm transition duration-200 focus:border-indigo-500 focus:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
+                className="h-12 w-full rounded-lg border border-neutral-700 bg-neutral-800/60 pl-4 pr-12 text-base text-white placeholder-neutral-500 shadow-sm backdrop-blur-sm transition duration-200 focus:border-verde-500 focus:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-verde-500/30"
                 {...register("password")}
               />
 
               <button
                 type="button"
+                tabIndex="-1"
                 onClick={() => setShowPassword((prev) => !prev)}
                 className="absolute right-3 p-1.5 text-neutral-400 transition hover:text-neutral-200 focus:outline-none cursor-pointer"
                 aria-label={showPassword ? "Ocultar senha" : "Ver senha"}
@@ -129,7 +131,7 @@ function Login() {
           {/* Botão Entrar */}
           <button
             type="submit"
-            className="mt-2 h-12 w-full rounded-lg bg-indigo-600 text-base font-semibold text-white shadow-md shadow-indigo-600/20 transition-all duration-200 hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 active:scale-[0.98]"
+            className="mt-2 h-12 w-full rounded-lg bg-verde-600 text-base font-semibold text-white shadow-md shadow-verde-600/20 transition-all duration-200 hover:bg-verde-500 focus:outline-none focus:ring-2 focus:ring-verde-500/50 active:scale-[0.98]"
           >
             Entrar
           </button>
