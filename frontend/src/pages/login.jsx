@@ -31,7 +31,7 @@ function Login() {
     try {
       await login(data);
 
-      navigate("/dashboard");
+      navigate("/lancamento");
     } catch (err) {
       // mostra erro na tela
       console.error(err);

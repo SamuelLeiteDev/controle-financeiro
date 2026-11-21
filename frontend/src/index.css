@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-verde-50: #edfaf3;
   --color-verde-100: #d3f3e1;
@@ -18,12 +20,35 @@
   --color-meta: #0f8a8a;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --fundo: #0c1410;
-    --cartao: #131e18;
-    --borda: #24342b;
-    --texto: #e7f1eb;
-    --texto-suave: #8da295;
-  }
+:root {
+  --fundo: #f5f9f6;
+  --fundo1: #e1e3e1;
+  --fundo2: #c5c7c5;
+  --fundo3: #a8a8a8;
+  --cartao: #ffffff;
+  --borda: #b7bdb9;
+  --texto: #0c0d0d;
+  --texto-suave: #717573;
+  --titulo: #085c30;
+}
+
+.dark {
+  --fundo: #1e1f1e;
+  --cartao: #131e18;
+  --borda: #2c2e2c;
+  --texto: #e7f1eb;
+  --texto-suave: #8d8f8d;
+  --titulo: #3ebd7b;
+}
+
+@theme inline {
+  --color-fundo: var(--fundo);
+  --color-fundo1: var(--fundo1);
+  --color-fundo2: var(--fundo2);
+  --color-fundo3: var(--fundo3);
+  --color-cartao: var(--cartao);
+  --color-borda: var(--borda);
+  --color-texto: var(--texto);
+  --color-texto-suave: var(--texto-suave);
+  --color-titulo: var(--titulo);
 }

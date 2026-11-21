@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
+import { ArrowRight, ArrowLeft } from "lucide-react";
 
 export default function Sidebar({ isOpen, setIsOpen }) {
   const menuItems = [
     { name: "Dashboard", path: "/dashboard", icon: "📊" },
-    { name: "Transações", path: "/transacoes", icon: "💸" },
+    { name: "Lançamentos", path: "/lancamento", icon: "💸" },
     { name: "Cartões", path: "/cartoes", icon: "💳" },
     { name: "Relatórios", path: "/relatorios", icon: "📈" },
   ];
@@ -16,7 +17,7 @@ export default function Sidebar({ isOpen, setIsOpen }) {
 
   return (
     <aside
-      className={`fixed inset-x-0 bottom-0 z-50 flex max-h-[75vh] w-full flex-col rounded-t-2xl border-t border-slate-800 bg-slate-900 transition-all duration-300 ease-out md:sticky md:top-0 md:h-screen md:max-h-none md:shrink-0 md:rounded-none md:border-r md:border-t-0 ${
+      className={`fixed inset-x-0 bottom-0 z-50 flex max-h-[75vh] w-full flex-col rounded-t-2xl border-t border-borda bg-fundo transition-all duration-300 ease-out md:sticky md:top-0 md:h-screen md:max-h-none md:shrink-0 md:rounded-none md:border-r md:border-t-0 ${
         isOpen
           ? "translate-y-0 md:w-64"
           : "translate-y-full md:w-20 md:translate-y-0"
@@ -28,13 +29,13 @@ export default function Sidebar({ isOpen, setIsOpen }) {
       </div>
 
       {/* Cabeçalho */}
-      <div className="flex h-16 items-center justify-between border-b border-slate-800 px-4">
+      <div className="flex h-16 items-center justify-between border-b border-borda px-2">
         <span
-          className={`overflow-hidden whitespace-nowrap font-bold text-sky-400 transition-all duration-200 ${
+          className={`overflow-hidden whitespace-nowrap font-bold text-titulo transition-all duration-200 ${
             isOpen ? "w-auto text-xl opacity-100" : "md:w-0 md:opacity-0"
           }`}
         >
-          FinançasApp
+          FinControl
         </span>
 
         {/* Botão de fechar no mobile */}
@@ -53,9 +54,18 @@ export default function Sidebar({ isOpen, setIsOpen }) {
           onClick={() => setIsOpen((prev) => !prev)}
           title={isOpen ? "Recolher menu" : "Expandir menu"}
           aria-label={isOpen ? "Recolher menu" : "Expandir menu"}
-          className="hidden h-8 w-8 items-center justify-center rounded-lg bg-slate-800 text-xs text-slate-300 transition hover:bg-slate-700 hover:text-white md:flex"
+          className="hidden h-8 w-fit px-2 items-center justify-center rounded-lg bg-fundo1 text-xs text-texto transition hover:bg-fundo2 md:flex"
         >
-          {isOpen ? "◀" : "▶"}
+          {isOpen ? (
+            <ArrowLeft size={16} />
+          ) : (
+            <>
+              <a href="" className="text-texto">
+                Menu
+              </a>
+              <ArrowRight size={16} />
+            </>
+          )}
         </button>
       </div>
 
@@ -70,8 +80,8 @@ export default function Sidebar({ isOpen, setIsOpen }) {
             className={({ isActive }) =>
               `flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
                 isActive
-                  ? "bg-sky-600 text-white"
-                  : "text-slate-300 hover:bg-slate-800 hover:text-white"
+                  ? "bg-verde-600 text-white"
+                  : "text-texto hover:bg-verde-800 hover:text-white"
               } ${!isOpen ? "md:justify-center md:px-0" : ""}`
             }
           >

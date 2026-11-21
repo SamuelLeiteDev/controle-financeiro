@@ -4,10 +4,11 @@ import "./index.css";
 import Login from "./pages/login.jsx";
 import Register from "./pages/register.jsx";
 import Home from "./pages/home.jsx";
-import Dashboard from "./pages/dashboard.jsx";
+import Lancamento from "./pages/lancamento.jsx";
 import PrivateRoute from "./components/PrivateRoute.jsx";
 import RootLayout from "./layouts/RootLayout.jsx";
 import { AuthProvider } from "./contexts/authContext.jsx";
+import { ThemeProvider } from "./contexts/themeContext.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -33,8 +34,8 @@ const router = createBrowserRouter([
         element: <RootLayout />,
         children: [
           {
-            path: "/dashboard",
-            element: <Dashboard />,
+            path: "/lancamento",
+            element: <Lancamento />,
           },
           // { path: "/transacoes", element: <Transacoes /> },
         ],
@@ -45,8 +46,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
+    <ThemeProvider>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
+    </ThemeProvider>
   </StrictMode>,
 );

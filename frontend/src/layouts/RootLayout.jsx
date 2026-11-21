@@ -7,7 +7,7 @@ export default function RootLayout() {
   const [isOpen, setIsOpen] = useState(() => window.innerWidth >= 768);
 
   return (
-    <div className="flex min-h-screen bg-slate-950 text-slate-100">
+    <div className="flex min-h-screen bg-fundo text-slate-100">
       {/* Botão flutuante na parte inferior direita no mobile */}
       {!isOpen && (
         <button
